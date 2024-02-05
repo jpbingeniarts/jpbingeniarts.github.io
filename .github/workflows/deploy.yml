@@ -5,8 +5,7 @@ on:
   push:
     branches: ["releases/**"]
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+  
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
@@ -30,6 +29,7 @@ jobs:
         run: echo ceci est un deploy en staging
 
   deploy-production:
+    needs: deploy-staging
     environment:
       name: production
       url: ${{ steps.deployment.outputs.page_url }}
