@@ -29,6 +29,7 @@ jobs:
         run: echo ceci est un build avec config de prod
 
   deploy-dev:
+    name: Deploy to Dev
     needs: build
     environment:
       name: development
@@ -37,6 +38,7 @@ jobs:
       - name: write-something
         run: echo ceci est un deploy en staging
   deploy-staging:
+    name: Deploy to Staging
     needs: build
     environment:
       name: staging
@@ -46,6 +48,7 @@ jobs:
         run: echo ceci est un deploy en staging
 
   deploy-production:
+    name: Deploy to Prod
     needs: deploy-staging
     environment:
       name: production
