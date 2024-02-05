@@ -15,5 +15,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Build
+      - name: Build dev application
+        run: echo ceci est un build avec les config de dev
+
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Test application
         run: echo ceci est un build

@@ -18,7 +18,26 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Build
+        run: echo ceci est un build avec config de prod
+
+  deploy-dev:
+    needs: build
+    environment:
+      name: development
+    runs-on: ubuntu-latest
+    steps:
+      - name: write-something
+        run: echo ceci est un deploy en staging
   deploy-staging:
+    needs: build
     environment:
       name: staging
     runs-on: ubuntu-latest
