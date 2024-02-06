@@ -2,17 +2,17 @@ name: Test-Dev
 
 on:
   workflow_call: 
-    inputs:
-      config-path:
-        required: false
-        type: string
+    # inputs:
+    #   config-path:
+    #     required: false
+    #     type: string
 jobs:
-  # build:
-  #   uses: ./.github/workflows/callable_build_dev.yml
-  #   secrets: inherit
+  build-dev:
+    uses: ./.github/workflows/callable_build_dev.yml
+    secrets: inherit
 
-  test:
-    # needs: build
+  test-dev:
+    needs: build-dev
     runs-on: ubuntu-latest
 
     steps:
