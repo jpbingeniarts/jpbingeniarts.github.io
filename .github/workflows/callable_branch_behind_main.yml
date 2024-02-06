@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
       - name: git-branch-behind-main
         uses: spencercjh/git-branch-behind-main@v1.0.0
 
