@@ -7,12 +7,12 @@ on:
         required: false
         type: string
 jobs:
-  build:
-    uses: ./.github/workflows/reusables/callable_build_dev.yml
-    secrets: inherit
+  # build:
+  #   uses: ./.github/workflows/reusables/callable_build_dev.yml
+  #   secrets: inherit
 
   test:
-    needs: build
+    # needs: build
     runs-on: ubuntu-latest
 
     steps:
