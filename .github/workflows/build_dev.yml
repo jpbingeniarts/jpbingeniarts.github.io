@@ -1,0 +1,20 @@
+name: Build
+
+
+on:
+  workflow_call: 
+    inputs:
+      config-path:
+        required: true
+        type: string
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build dev application
+        run: echo ceci est un build avec les config de dev
+

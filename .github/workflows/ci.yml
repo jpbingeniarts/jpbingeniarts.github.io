@@ -6,17 +6,11 @@ on:
     branches:
       - main
       - release/**
+      - feature/**
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Build dev application
-        run: echo ceci est un build avec les config de dev
+  call-build-workflow:
+    uses: ./.github/workflows/build_dev.yml
 
   test:
     needs: build
