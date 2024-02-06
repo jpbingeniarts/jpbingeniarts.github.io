@@ -8,7 +8,7 @@ on:
         type: string
 jobs:
   # build:
-  #   uses: ./.github/workflows/reusables/callable_build_dev.yml
+  #   uses: ./.github/workflows/callable_build_dev.yml
   #   secrets: inherit
 
   test:

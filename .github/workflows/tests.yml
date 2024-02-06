@@ -11,5 +11,5 @@ on:
 jobs:
 
   test:
-    uses: ./.github/workflows/reusables/callable_test_dev.yml
+    uses: ./.github/workflows/callable_test_dev.yml
     secrets: inherit
