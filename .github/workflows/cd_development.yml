@@ -1,0 +1,23 @@
+name: CD Development
+
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: ["main"]
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+
+jobs:
+  build-prod:
+    uses: ./.github/workflows/callable_build_prod.yml
+    secrets: inherit
+  
+  deploy-dev:
+    name: Deploy to Dev
+    needs: build-prod
+    environment:
+      name: development
+    runs-on: ubuntu-latest
+    steps:
+      - name: write-something
+        run: echo ceci est un deploy en staging

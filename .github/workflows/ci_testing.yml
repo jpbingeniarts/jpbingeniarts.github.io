@@ -1,0 +1,15 @@
+name: CI Testing
+
+
+on:
+  push:
+    branches:
+      - main
+      - release/**
+      - feature/**
+
+jobs:
+
+  ci-test:
+    uses: ./.github/workflows/callable_test_dev.yml
+    secrets: inherit

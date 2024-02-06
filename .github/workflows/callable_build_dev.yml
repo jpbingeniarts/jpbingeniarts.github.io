@@ -1,14 +1,10 @@
-name: Build
-
+name: Build-Dev
 
 on:
-  push:
-    branches:
-      - main
-      - release/**
+  workflow_call: 
 
 jobs:
-  build:
+  build-dev:
     runs-on: ubuntu-latest
 
     steps:
@@ -18,11 +14,3 @@ jobs:
       - name: Build dev application
         run: echo ceci est un build avec les config de dev
 
-  test:
-    needs: build
-    runs-on: ubuntu-latest
-
-    steps:
-
-      - name: Test application
-        run: echo ceci est un build
