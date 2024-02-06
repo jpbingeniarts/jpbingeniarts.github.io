@@ -1,4 +1,4 @@
-name: Testing
+name: CI Testing
 
 
 on:
@@ -10,6 +10,6 @@ on:
 
 jobs:
 
-  test:
+  ci-test:
     uses: ./.github/workflows/callable_test_dev.yml
     secrets: inherit

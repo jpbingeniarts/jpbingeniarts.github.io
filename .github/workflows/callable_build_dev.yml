@@ -1,12 +1,8 @@
 name: Build-Dev
 
-
 on:
   workflow_call: 
-    # inputs:
-    #   config-path:
-    #     required: false
-    #     type: string
+
 jobs:
   build-dev:
     runs-on: ubuntu-latest

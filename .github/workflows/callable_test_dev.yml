@@ -2,10 +2,7 @@ name: Test-Dev
 
 on:
   workflow_call: 
-    # inputs:
-    #   config-path:
-    #     required: false
-    #     type: string
+    
 jobs:
   build-dev:
     uses: ./.github/workflows/callable_build_dev.yml
