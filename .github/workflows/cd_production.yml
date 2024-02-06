@@ -18,28 +18,13 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  build-prod:
+    uses: ./.github/workflows/callable_build_prod.yml
+    secrets: inherit    
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Build
-        run: echo ceci est un build avec config de prod
-
-  deploy-dev:
-    name: Deploy to Dev
-    needs: build
-    environment:
-      name: development
-    runs-on: ubuntu-latest
-    steps:
-      - name: write-something
-        run: echo ceci est un deploy en staging
   deploy-staging:
     name: Deploy to Staging
-    needs: build
+    needs: build-prod
     environment:
       name: staging
     runs-on: ubuntu-latest
