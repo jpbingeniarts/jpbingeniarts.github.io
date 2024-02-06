@@ -1,0 +1,20 @@
+name: Test-Dev
+
+on:
+  workflow_call: 
+    inputs:
+      config-path:
+        required: false
+        type: string
+jobs:
+  build:
+    uses: ./.github/workflows/reusables/callable_build_dev.yml
+    secrets: inherit
+
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Test application
+        run: echo ceci est un build

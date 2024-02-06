@@ -9,16 +9,7 @@ on:
       - feature/**
 
 jobs:
-  build:
-    uses: ./.github/workflows/build_dev.yml
-    secrets: inherit
-
 
   test:
-    needs: build
-    runs-on: ubuntu-latest
-
-    steps:
-
-      - name: Test application
-        run: echo ceci est un build
+    uses: ./.github/workflows/reusables/callable_test_dev.yml
+    secrets: inherit
