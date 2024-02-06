@@ -13,7 +13,7 @@ jobs:
     uses: ./.github/workflows/build_dev.yml
 
   test:
-    needs: build
+    needs: call-build-workflow
     runs-on: ubuntu-latest
 
     steps:
