@@ -9,13 +9,13 @@ on:
       - feature/**
 
 jobs:
-  call-build-workflow:
+  build:
     uses: ./.github/workflows/build_dev.yml
     secrets: inherit
 
 
   test:
-    needs: call-build-workflow
+    needs: build
     runs-on: ubuntu-latest
 
     steps:
