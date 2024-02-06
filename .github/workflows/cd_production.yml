@@ -18,9 +18,15 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  
   git-branch-behind-main:
-    uses: spencercjh/git-branch-behind-main@v1.0.0
-    
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: git-branch-behind-main
+        uses: spencercjh/git-branch-behind-main@v1.0.0
+
   build-prod:
     uses: ./.github/workflows/callable_build_prod.yml
     secrets: inherit    
