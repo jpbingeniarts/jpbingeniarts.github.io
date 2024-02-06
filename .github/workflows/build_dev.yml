@@ -8,7 +8,7 @@ on:
         required: false
         type: string
 jobs:
-  build:
+  build-dev:
     runs-on: ubuntu-latest
 
     steps:
