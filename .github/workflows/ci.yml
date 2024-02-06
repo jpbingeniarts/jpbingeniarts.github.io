@@ -11,6 +11,8 @@ on:
 jobs:
   call-build-workflow:
     uses: ./.github/workflows/build_dev.yml
+    secrets: inherit
+
 
   test:
     needs: call-build-workflow
