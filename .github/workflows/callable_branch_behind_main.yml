@@ -1,0 +1,14 @@
+name: Branch behind main
+
+on:
+  workflow_call: 
+
+jobs:
+  git-branch-behind-main:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: git-branch-behind-main
+        uses: spencercjh/git-branch-behind-main@v1.0.0
+

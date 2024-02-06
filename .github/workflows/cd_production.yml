@@ -20,16 +20,12 @@ concurrency:
 jobs:
   
   git-branch-behind-main:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-      - name: git-branch-behind-main
-        uses: spencercjh/git-branch-behind-main@v1.0.0
+    uses: ./.github/workflows/callable_branch_behind_main.yml
 
   build-prod:
+    needs: git-branch-behind-main
     uses: ./.github/workflows/callable_build_prod.yml
-    secrets: inherit    
+    secrets: inherit
 
   deploy-staging:
     name: Deploy to Staging
