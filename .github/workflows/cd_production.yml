@@ -18,6 +18,9 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  git-branch-behind-main:
+    uses: spencercjh/git-branch-behind-main@v1.0.0
+    
   build-prod:
     uses: ./.github/workflows/callable_build_prod.yml
     secrets: inherit    
