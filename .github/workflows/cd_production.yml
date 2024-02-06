@@ -21,6 +21,7 @@ jobs:
   
   git-branch-behind-main:
     uses: ./.github/workflows/callable_branch_behind_main.yml
+    secrets: inherit
 
   build-prod:
     needs: git-branch-behind-main
