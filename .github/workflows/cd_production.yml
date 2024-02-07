@@ -1,4 +1,4 @@
-name: Deployments
+name: CD Production
 
 on:
   # Runs on pushes targeting the default branch
